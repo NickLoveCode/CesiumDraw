@@ -1,0 +1,151 @@
+﻿ /*    PC端  ---------------------------------------------------------    */
+    * {
+        margin:0;padding:0;
+    }
+ 
+
+ 	.container{
+		font-family: 微软雅黑;
+		width:98%;
+		background-color:#00060B;
+		margin-left:0px;
+		border-top:1px solid #617085;
+		border-left:1px solid #617085;
+		border-right:1px solid #617085;
+		border-bottom:1px solid #617085;
+		margin-top:0px;
+		margin-right:0px;	
+        /* position: absolute;
+        z-index: 999; */
+	}
+        a{
+            text-decoration: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            font-size:12px; 
+            color: #FFFFFF;
+        }
+ 
+        ul {
+            list-style: none;
+            margin:0;
+            padding:0;
+            overflow: hoidden;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .li1{
+            cursor: pointer;
+            width:100%;
+            background-color: #142337;
+            height:auto;           
+            user-select: none;
+			border-left-color:#617085;
+			border-right-color:#617085;
+			margin-bottom:2px;
+        }
+ 
+        li>ul>li {
+            
+            background-color: #324150;
+            border-bottom:1px solid #00060B;
+        }
+ 
+        li>ul>li>ul>li {
+            background-color: #0B1710;
+            border:0px;
+        }
+ 
+        .openmoreUp {
+            margin-top:15px;
+            margin-right:75px;
+            float:right;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 7px solid #C9D2E0;
+        }
+ 
+        .openmoreDown {
+            margin-top:15px;
+            margin-right:75px;
+            float:right;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 7px solid #C9D2E0;
+        }
+ 
+        .hasmore {
+            float:right;
+            margin-right:36px;
+            width: 20px;
+            font-size:20px;
+            margin-top:8px;
+ 
+        }
+ 
+        .menu1,.menu2,.menu3 {
+            display: block;
+            width:100%;
+            height:50px;
+            line-height: 40px;
+        }
+ 
+        .smallfont {
+            font-size: 16px;
+            font-weight:300;
+            color: #5b5b5b;
+        }
+ 
+        .menu1 {
+ 			 color:#C9D2E0;
+			  font-size:18px;
+			  text-align:center;
+        }
+ 
+        .menu2 {
+            padding-left:60px;
+			 color:#FFFFFF;
+			  font-size:16px;
+        }
+ 
+        .menu3 {
+             font-size:16px;
+			 text-align:center;
+			 color:#FFFFFF;
+        }
+ 
+        .menu1:hover{
+           
+            color:#ffffff;
+ 
+        }
+ 
+        .menu2:hover{
+            color:#1DE4A4;
+ 
+        }
+ 
+        .menu3:hover{
+            color:#1DE4A4;
+        }
+ 
+        .ul2 {
+            display: none;
+            overflow: hidden;
+        }
+ 
+        .ul3 {
+            display: none;
+            overflow: hidden;
+        }
+ 
+    

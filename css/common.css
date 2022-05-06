@@ -1,0 +1,63 @@
+img {vertical-align: middle;}
+a, a:hover, a:active, a:focus {text-decoration: none; -webkit-user-drag: none; outline: none; color: #C9D2E0;}
+a i{font-size: 13px;}
+
+::-webkit-scrollbar{box-sizing:border-box;width:9px;height:9px}
+::-webkit-scrollbar-thumb{background-color:rgba(0,0,0,.2)}
+::-webkit-scrollbar-thumb:hover{background-color:rgba(0,0,0,.25)}
+::-webkit-scrollbar-thumb:active{background-color:rgba(0,0,0,.2)}
+
+#main{padding: 0 10px;}
+.style-color{color:#fd521d;}
+
+/* 数据表格 */
+.table i{font-size: 20px; color: #0D9B50;}
+.bootstrap-table .table>thead>tr>th{border-bottom: none;}
+.bootstrap-table .table:not(.table-condensed), .bootstrap-table .table:not(.table-condensed)>tbody>tr>td, .bootstrap-table .table:not(.table-condensed)>tbody>tr>th, .bootstrap-table .table:not(.table-condensed)>tfoot>tr>td, .bootstrap-table .table:not(.table-condensed)>tfoot>tr>th, .bootstrap-table .table:not(.table-condensed)>thead>tr>td{padding: 12px 8px;}
+/* 分页 */
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus{background: #f5f5f5; color: #000; border-color: #fff;}
+.pagination>li>a, .pagination>li>span{color: #000;}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus{background-color: #324150;}
+.pagination>.active>a{background: #0D9B50; color: #fff;}
+/* bootstrap */
+.jconfirm .jconfirm-box .jconfirm-buttons button{-webkit-border-radius: 0; border-radius: 0;}
+.btn:active{-webkit-box-shadow: none; box-shadow: none;}
+/* input */
+body .jconfirm{z-index: 999;}
+.jconfirm-content form{margin-top: 10px;}
+.crudDialog{padding: 0 0 2px;}
+.dialog-buttons a{font-weight: bold;}
+.form-group{margin-bottom: 20px;}
+.typeText label, .typePwd label{position: absolute; line-height: 2; font-size: 16px; font-weight: normal; transition: all .2s; pointer-events: none; color: #C9D2E0; text-indent: 10px;}
+.typeCheck{display: flex;}
+.typeSelect label{line-height: 2; font-size: 16px; font-weight: normal; transition: all .2s; pointer-events: none; color: #C9D2E0; text-indent: 10px;}
+.typeRadio label{display: inline-block; padding: 0; height: 33px; line-height: 33px;}
+.form-group label{font-size: 16px; color: #C9D2E0;}
+.form-group .active{transform: translateY(-80%); font-size: 13px; color: #0D9B50; text-indent: 0px;}
+.form-group .form-control{font-size: 14px; box-shadow: none; padding-left: 0; padding-right: 0; border-radius: 0; border: none; border-bottom: 2px solid #eee; outline: none; transition: all .5s;}
+.form-group .form-control:focus{box-shadow: none; border-color: #1FB4FF;}
+.form-group .form-controls{font-size: 14px;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+    background: #051628;
+    border-radius: 0;
+    border: 2px solid #617085;
+    text-indent: 5px;
+    color: #C9D2E0;
+    outline: none;
+    transition: all .5s;
+    width:91%;}
+ .form-group .form-controls:focus{box-shadow: none; border-color: #1FB4FF;}
+.bootstrap-table .fixed-table-pagination{content: "";display: block;clear: both;width: 98%;margin: 0 auto;background: #051628;height: 55px;}
+.bootstrap-table .fixed-table-pagination > .pagination ul.pagination a{background: #051628; color: #C9D2E0; border: 1px solid #617085}
+.bootstrap-table .fixed-table-pagination > .pagination ul.pagination .page-link{color: #617085}
+.bootstrap-table .fixed-table-pagination > .pagination ul.pagination .active a{background: #0D9B50; color: #fff; border: 1px solid #073732;}
+.bootstrap-table .fixed-table-pagination .pull-right .btn{width: 68px; border: 1px solid #617085; background: #051628; border-radius: unset; color: #C9D2E0; }
+.bootstrap-table .fixed-table-pagination .pull-right{color: #C9D2E0; }
+.bootstrap-table .fixed-table-footer{display: none}
+.table-hover > tbody > tr:hover{background: #324150}
+.bootstrap-table .fixed-table-container .fixed-table-body .fixed-table-loading{background: #051628}
+.dropdown-menu{background-color: #324150;}
+.dropdown-menu li a{color: #C9D2E0}
+.dropdown-menu .active a{background: #051628;}

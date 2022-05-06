@@ -1,0 +1,297 @@
+/* 去锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟绞� */
+body, ol, ul, dl, li, dt, dd, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea,select{
+    margin: 0;
+    padding: 0;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+}
+/* 锟斤拷锟斤拷页锟斤拷锟斤拷锟斤拷锟斤拷锟藉背锟斤拷锟斤拷小 */
+html, body {
+	max-width: 100%;
+    height: auto;
+    background-color: #00060B;
+    font-family: "Microsoft YaHei";
+}
+/* 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷式 */
+#header{
+	max-width: 98%;
+	height: 50px;
+	background-color: #0D9B50;
+	color: #fff;
+	line-height: 48px;
+	font-size: 18px;
+	text-indent: 17px;
+	margin: 10px auto;
+}
+
+/* 页锟斤拷锟斤拷锟斤拷 */
+.content{
+	max-width: 98%;
+	height: auto;
+	margin: 0 auto;
+}
+/* 锟斤拷锟斤拷锟斤拷询 */
+.search-main{
+	max-width: 98%;
+	min-height: 210px;
+/* 	max-height: auto; */
+	margin: 0 auto 10px; 
+	background-color: #1C326C;
+}
+.room-search-main{
+	min-height: 160px;
+}
+/* 锟斤拷锟斤拷锟斤拷询锟斤拷锟斤拷 */
+.search-head{
+	width: 100%;
+	min-height: 80px;
+	/* max-height: auto; */
+	font-size: 17px;
+	color: #fff;
+	line-height: 80px;
+	text-indent: 22px;
+}
+/* 锟斤拷锟斤拷锟斤拷询锟斤拷锟斤拷 */
+.search-content{
+	width: 100%;
+	min-height: 130px;
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	color: #fff;
+}
+.room-search-content{
+	width: 97%;
+	min-height: 80px;
+	float: right;
+}
+.search-condition{
+	width: 25%;
+	min-height: 130px;
+	/* height: auto; */
+	/* display: flex; */
+}
+.room-search-condition{
+	width: 20%;
+	min-height: 80px;
+}
+/* 锟斤拷锟斤拷锟斤拷询锟斤拷锟斤拷 */
+.search-condition label{
+	display: inline-block;
+    /* width: 30%; */
+    width: 100px;
+    text-align: right;
+}
+/* 锟斤拷锟斤拷锟斤拷询锟斤拷锟斤拷锟� */
+.search-input, .search-select{
+	width: 53%;
+	height: 36px;
+	background-color: #306A99;
+	border: 1px solid #1FB4FF;
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 10px;
+	text-indent: 3px;
+	cursor: pointer;
+}
+/* 锟斤拷钮 */
+.search{
+	width: 25%;
+	min-height: 130px;
+	text-align: right;
+	line-height: 88px;
+}
+.room-search{
+	width: 20%;
+	min-height: 80px;
+	text-align: right;
+	line-height: 40px;
+}
+.search-btn, #experts-statistical-btn{
+	width: 68px;
+	height: 38px;
+	background-color: #0684C6;
+	font-size: 16px;
+	color: #fff;
+	border: none;
+	margin-right: 50px;
+}
+#experts-statistical-btn{
+	width: 96px;
+	height: 38px;
+}
+/* 锟叫憋拷 */
+.info-list{
+	max-width: 100%;
+	height: auto;
+	background-color: #324150;
+	margin: 0 auto;
+}
+/* 锟叫憋拷锟斤拷锟斤拷锟斤拷 */
+.list-operation{
+	max-width: 98%;
+	height: 60px;
+	margin: 0 auto;
+	line-height: 70px;
+}
+.list-operation img{
+	vertical-align: middle;
+}
+.list-operation span{
+	display: inline-block;
+	height: 30px;
+	margin-left: 5px;
+}
+.list-operation button{
+	width: 100px;
+	height: 31px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: #324150;
+    padding: 0;
+    line-height: 30px;
+    text-align: left;
+}
+/* 去锟斤拷button锟斤拷锟斤拷锟侥边匡拷 */
+.list-operation button:focus{
+	outline: 0!important;
+}
+/* 锟叫憋拷table */
+.list-table{
+	width: 98%;
+	height: auto;
+	color: #C9D2E0;
+	border: 1px solid rgb(217, 223, 226);
+	margin: 0 auto;
+}	
+.list-table td{
+	padding: 8px;
+}
+.list-table tr{
+	border-top: 1px solid #617085;
+}
+#info-table{
+	width: 100%;
+	height: auto;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+}
+#list-table thead tr{
+	width: 100%;
+	height: 49px;
+	background-color:#051628;
+}
+/* 页锟斤拷撞锟� */
+.footer{
+	max-width: 98%;
+	height: auto;
+	margin: 0 auto;
+	background-color: #051628;
+}
+/* 专锟斤拷统锟斤拷 */
+.experts-statistical{
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+	text-indent: 22px
+}
+/* 锟斤拷锟斤拷锟斤拷息锟斤拷锟� */
+#machine-mask, #experts-mask{
+	width: 100%;
+	height: 98%;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+.add-experts-info, .add-machine-info{
+	width: 700px;
+	height: 700px;
+    background: #E8E8E8;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.add-machine-info{
+	height: 350px;
+}
+.mask-content{
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+}
+.experts-info, .machine-info{
+	max-width: 700px;
+	height: auto;
+	list-style: none
+}
+.experts-info li , .machine-info li{
+	width: 90%;
+	height: 40px;
+	margin: 0 auto 20px;
+}
+.experts-info label, .machine-info label{
+	display: inline-block;
+	width: 20%;
+	height: 40px;
+	text-align: right;
+	line-height: 40px;
+	font-size: 16px;
+}
+.experts-info input[type=text], .machine-info input[type=text]{
+	width: 70%;
+	height: 38px;
+	border: 1px solid #1FB4FF;
+	font-size: 16px;
+	text-indent: 3px;
+}
+.infoTitle{
+	width: 30%;
+	height: auto;
+	line-height: 70px;
+    font-size: 17px;
+	text-align: right;
+	float: left;
+}
+.page{
+	width: 98%;
+	height: 49px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	background: #306A99;
+	color: #fff;
+	border-left: 1px solid #1FB4FF;
+	border-right: 1px solid #1FB4FF;
+	border-bottom: 1px solid #1FB4FF;
+}
+#pageSize{
+	width: 68px;
+	height: 28px;
+	color: #fff;
+	background: #306A99;
+	border: 1px solid #fff;
+	text-align: center;
+}
+.table-btn{
+	width: 68px;
+	height: 32px;
+	background: #fff;
+	color: #4778C7;
+	border: none;
+	border-radius: 3px;
+	margin-right: 10px;
+}
+.child-table{
+	width: 93%;
+	margin: 0 auto;
+}
+.child-table td{
+	padding: 8px;
+}

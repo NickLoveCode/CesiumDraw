@@ -1,0 +1,177 @@
+/* CSS Document */
+
+body{
+	color:#000000;	
+	font-family:寰蒋闆呴粦;
+	font-size:16px;
+	overflow: hidden;
+	background-color:#00060B;
+}
+/* 鏁翠綋div */
+.main{ 
+	width:100%;
+	position: relative;
+	overflow: hidden; 
+	padding-left:20px} 
+ /* 鍙充晶鑿滃崟瀛椾綋鍘熸潵鏍峰紡 */
+.m1{
+   text-align:center;
+   font-size:18px ;
+   font-family:"寰蒋闆呴粦";
+   color:#000000; 
+   text-decoration: none; 
+}
+ /* 鍙充晶鑿滃崟琚�変腑瀛椾綋鏍峰紡 */
+.m1_ {
+  text-align:center;
+  font-size:18px ;
+  font-family:"寰蒋闆呴粦";
+  color: #FFFFFF;
+  text-decoration: none;
+
+}
+ /* 姣忛〉鏍囬閮ㄥ垎妗嗙殑鏍峰紡div */
+#formHead{
+	width: 100%;
+	height: 54px;
+	background-color: #0D9B50;
+	display: flex;
+	margin-top:0px;
+	margin-left: 0px;
+}
+ /* 姣忛〉鏍囬瀛楃殑鏍峰紡 */
+#formTitle{
+	font-size: 18px;
+	font-family: '寰蒋闆呴粦';
+	color: #FFFFFF; 
+	margin-left:20px; 
+	margin-top:15px;
+
+}
+ /* 姣忛〉鏌ヨ閮ㄥ垎鐨勬牱寮廳iv */
+#formSearch{
+	width: 100%;
+	height: 210px;
+	background-color: #324150;
+	display: flex;
+	margin-top:10px;
+}
+ /* 姣忛〉鏄剧ず鏁版嵁閮ㄥ垎鐨勬牱寮廳iv */
+#formList{
+	width: 100%;
+	height: 5050px;
+	background-color: #1C326C;
+	margin-top:10px;
+}
+ /* 姣忛〉鏌ヨ閮ㄥ垎涓緭鍏ユ鐨勬牱寮� */
+.text{
+	outline: none;
+	display: inline-block;
+	font: 16px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei";
+	padding:0 15px;
+	line-height: 36px;
+	border: 1px solid #617085;
+	background:#051628;
+	color: #FFFFFF !important;
+}
+.temptext{
+	outline: none;
+    display: inline-block;
+    font: 16px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei";
+        line-height: normal;
+    padding: 0 15px;
+    line-height: 36px;
+    border: 1px solid #617085;
+    /*background: #235D8C;*/
+    background: #051628;
+    color: #FFFFFF !important;
+  margin-left: 18px;
+margin-top: 12px;
+width: 280px;
+height:45px;
+
+}
+.addtemp-btn{
+width: 68px;
+height: 35px;
+background-color: #0D9B50;
+font-size: 16px;
+color: #fff;
+line-height: 32px;
+border: none;
+
+margin-left: 30px;
+margin-right: 50px;
+position: relative;
+top: -40px;
+left: 61%;
+}
+
+ /* 姣忛〉鏌ヨ鏂囧瓧鐨勬牱寮� */
+.searchTitle{
+	font-size: 16px;
+	font-family: '寰蒋闆呴粦';
+	color: #FFFFFF; 
+}
+ /* 姣忛〉鏌ヨ鎸夐挳鐨勬牱寮� */
+.searchBtn{
+	background:url(../img/search_bz.png);  
+	width:68px; 
+	height:38px; 
+	border:0px;
+}
+ /* 妯℃澘绠＄悊宸︿晶鏍戦儴鍒嗙殑鏍峰紡div */
+.divleft{ 
+	float:left;
+	width:20%; 
+	height:90%;
+	border:1px solid #617085;  
+	margin-top:10px;
+} 
+ /* 妯℃澘绠＄悊涓彸渚ф暣浣撶殑鏍峰紡div */
+.divright{ 
+	float:left;
+	width:79%; 
+	border:0px ; 
+	position: relative;
+	margin-left:10px;
+} 
+#contentList{
+	width: 100%;
+	background:url(../img/whitebg.png); 		
+	margin-top:64px;
+	margin-left:20px;
+    margin-right:20px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    min-width: 1000px;
+    z-index:-10;
+    zoom: 1;
+    background-color: #1C326C;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center 0;
+}
+.content{
+	margin-top:100px;
+	margin-left:200px;
+}
+.content ul{
+	list-style: none;
+}
+.li1{
+	cursor: pointer;	
+	line-height:40px;
+	height:auto;           
+	user-select: none;
+}
+ .menu1 {
+	 color:#C9D2E0;
+	 font-size:18px;
+	 text-align:center;
+}

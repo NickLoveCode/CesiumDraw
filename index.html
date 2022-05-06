@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>二三维标绘</title>
+  <link href="./lib/Cesium-1.51/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <link href="./lib/Cesium-1.51/Build/Cesium/Widgets/lighter.css" rel="stylesheet">
+  <link href="./lib/Cesium-1.51/Apps/Sandcastle/templates/bucket.css" rel="stylesheet">
+  <link href="./css/navigation.css" rel="stylesheet">
+  <link href="./css/DrawArrow.css" rel="stylesheet">
+  <link href="./css/earth.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/stylepc.css">
+  <style> 
+ .div-b{ float:left;width:13%;border:0px solid #FFFFFF;position: absolute;z-index: 999;}
+ .div-a{ float:right;height: 100%;width:100%;border:0px solid #F00 ;position: absolute;margin: 0px;}
+.cesium-viewer-infoboxcontainer{
+	height:100%
+} 
+  </style>
+</head>
+
+<body bgcolor="#00060B" id="body1">
+<div class="div-b">
+  <img id="showhide" src="./img/icoLeft.png" onclick="showhidemenu()" style="position: absolute;margin-left:100%;width:29px ;height:29px;"/>
+    <div class="container">
+      <div class="nav">
+         <ul id="menuslist">
+         </ul>
+      </div>
+    </div>
+  </div>
+  <div class="div-a">
+    <div id="cesiumContainer" class="fullSize"></div>
+    <div id="loadingOverlay">
+      <h1>Loading...</h1>
+    </div>
+    <div id="Toollogo"><img src="./img/tool.png" class="chatimg" width="94px" height="32px" onclick="showRosca()"/></div> 
+  </div> 
+
+  <div id="toollist">
+    <ul>
+      <li class="licss"><img src="./img/menuIcon/biaohui.png" width="16px" height="11px"/> <a href="#" onclick="show2DTool()">二维平面</a></li>
+      <li class="licss"><img src="./img/menuIcon/biaohui1.png" width="16px" height="11px"/> <a href="#" onclick="showJunTool()">箭头标绘</a></li>
+      <li class="licss"><img src="./img/menuIcon/jb.png" width="16px" height="11px"/> <a href="#" onclick="showJbTool()">我方</a></li>
+      <li class="licss"><img src="./img/menuIcon/jb.png" width="16px" height="11px"/> <a href="#" onclick="showJb2Tool()">敌方</a></li>
+      <li class="licss"><img src="./img/menuIcon/jb.png" width="16px" height="11px"/> <a href="#" onclick="showJb3Tool()">中立</a></li>
+      <li class="licss"><img src="./img/menuIcon/jb.png" width="16px" height="11px"/> <a href="#" onclick="showJb4Tool()">敌盟</a></li>
+      <li class="licss"><img src="./img/menuIcon/jb.png" width="16px" height="11px"/> <a href="#" onclick="showJb5Tool()">不明</a></li>
+    </ul>
+  </div>
+  <div id="filetool">
+    <ul>
+      <li class="licss"><img src="./img/menuIcon/print.png" width="20px" height="20px"/> <a href="#" onclick="PrintTool()">保存图片</a></li>
+      <li class="licss"><input type="file" id="files" onchange="importFile()"></input></li>
+      <li class="licss"><input type="button" id="exportFile" onclick="saveFile()" value="导出当前信息"></input></li>
+      <li class="licss"><input type="button" id="deleteEntity" onclick="deleted()" value="删除实体"></input></li>
+      <!-- <li class="licss"><input type="button" id="readScenario" onclick="readScenario()" value="加载初始态势"></input></li>
+      <li class="licss"><input type="button" id="sendStiuation" onclick="sendStiuation()" value="转呈决策"></input></li> -->
+    </ul>
+  </div>
+ <div id="twolist" style="display: none;">
+      <ul>
+        <li><img src="./img/line.png" width="55px" height="55px" onclick="addLine()"/></li>
+        <li><img src="./img/Polygon.png" width="55px" height="55px" onclick="addPolygon()"/></li>
+        <li><img src="./img/Rectangle.png" width="55px" height="55px" onclick="addRectangle()"></li>
+        <li><img src="./img/Circle.png" width="55px" height="55px" onclick="addCircle()"/></li>
+      </ul>
+    </div>
+<div id="toolbar" style="display: none;"></div>
+    <div id="junlist" style="display: none;">
+      <ul id="junimage">
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/aerostat_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/aerostat_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/air_fw_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/air_fw_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/air_rw_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/air_rw_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/AirBase_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/AirBase_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/airdef_arty_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/airdef_arty_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/airdef_mis_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/airdef_mis_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/AirGroup_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/AirGroup_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/armor_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/armor_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/arty_gun_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/arty_gun_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/arty_mis_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/arty_mis_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/carrier_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/carrier_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/fixed_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/fixed_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/Installation_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/Installation_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/mechinf_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/mechinf_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/missile_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/missile_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/mobile_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/mobile_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/mobilegroup_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/mobilegroup_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/radar_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/radar_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/satellite_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/satellite_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/seasurface_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/seasurface_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/sonobuoy_active_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/sonobuoy_active_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/sonobuoy_passive_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/sonobuoy_passive_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/sub_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/sub_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/SubGroup_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/SubGroup_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/SurfaceGroup_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/SurfaceGroup_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/torp_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/torp_friendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/friendly/underwaterdecoy_friendly.png" title="" width="25px" height="25px" onclick="addJunBoard('friendly/underwaterdecoy_friendly.png')"/></li>
+      </ul>
+    </div>
+    <div id="junlist2" style="display: none;">
+      <ul>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/aerostat_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/aerostat_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/air_fw_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/air_fw_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/air_rw_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/air_rw_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/AirBase_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/AirBase_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/airdef_arty_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/airdef_arty_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/airdef_mis_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/airdef_mis_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/AirGroup_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/AirGroup_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/armor_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/armor_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/arty_gun_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/arty_gun_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/arty_mis_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/arty_mis_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/carrier_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/carrier_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/fixed_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/fixed_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/Installation_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/Installation_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/mechinf_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/mechinf_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/missile_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/missile_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/mobile_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/mobile_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/mobilegroup_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/mobilegroup_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/radar_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/radar_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/satellite_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/satellite_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/seasurface_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/seasurface_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/sonobuoy_active_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/sonobuoy_active_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/sonobuoy_passive_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/sonobuoy_passive_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/sub_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/sub_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/SubGroup_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/SubGroup_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/SurfaceGroup_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/SurfaceGroup_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/torp_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/torp_hostile.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/hostile/underwaterdecoy_hostile.png" title="" width="25px" height="25px" onclick="addJunBoard('hostile/underwaterdecoy_hostile.png')"/></li>
+      </ul>
+    </div>
+    <div id="junlist3" style="display: none;">
+      <ul>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/aerostat_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/aerostat_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/air_fw_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/air_fw_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/air_rw_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/air_rw_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/AirBase_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/AirBase_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/airdef_arty_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/airdef_arty_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/airdef_mis_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/airdef_mis_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/AirGroup_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/AirGroup_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/armor_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/armor_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/arty_gun_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/arty_gun_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/arty_mis_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/arty_mis_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/carrier_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/carrier_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/fixed_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/fixed_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/Installation_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/Installation_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/mechinf_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/mechinf_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/missile_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/missile_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/mobile_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/mobile_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/mobilegroup_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/mobilegroup_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/radar_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/radar_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/satellite_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/satellite_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/seasurface_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/seasurface_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/sonobuoy_active_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/sonobuoy_active_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/sonobuoy_passive_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/sonobuoy_passive_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/sub_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/sub_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/SubGroup_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/SubGroup_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/SurfaceGroup_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/SurfaceGroup_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/torp_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/torp_neutral.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/neutral/underwaterdecoy_neutral.png" title="" width="25px" height="25px" onclick="addJunBoard('neutral/underwaterdecoy_neutral.png')"/></li>
+      </ul>
+    </div>
+    <div id="junlist4" style="display: none;">
+      <ul>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/aerostat_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/aerostat_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/air_fw_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/air_fw_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/air_rw_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/air_rw_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/AirBase_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/AirBase_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/airdef_arty_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/airdef_arty_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/airdef_mis_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/airdef_mis_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/AirGroup_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/AirGroup_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/armor_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/armor_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/arty_gun_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/arty_gun_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/arty_mis_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/arty_mis_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/carrier_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/carrier_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/fixed_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/fixed_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/Installation_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/Installation_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/mechinf_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/mechinf_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/missile_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/missile_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/mobile_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/mobile_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/mobilegroup_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/mobilegroup_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/radar_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/radar_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/satellite_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/satellite_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/seasurface_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/seasurface_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/sonobuoy_active_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/sonobuoy_active_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/sonobuoy_passive_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/sonobuoy_passive_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/sub_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/sub_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/SubGroup_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/SubGroup_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/SurfaceGroup_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/SurfaceGroup_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/torp_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/torp_unfriendly.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unfriendly/underwaterdecoy_unfriendly.png" title="" width="25px" height="25px" onclick="addJunBoard('unfriendly/underwaterdecoy_unfriendly.png')"/></li>
+      </ul>
+    </div>
+    <div id="junlist5" style="display: none;">
+      <ul>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/aerostat_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/aerostat_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/air_fw_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/air_fw_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/air_rw_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/air_rw_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/AirBase_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/AirBase_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/airdef_arty_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/airdef_arty_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/airdef_mis_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/airdef_mis_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/AirGroup_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/AirGroup_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/armor_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/armor_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/arty_gun_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/arty_gun_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/arty_mis_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/arty_mis_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/carrier_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/carrier_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/fixed_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/fixed_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/Installation_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/Installation_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/mechinf_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/mechinf_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/missile_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/missile_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/mobile_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/mobile_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/mobilegroup_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/mobilegroup_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/radar_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/radar_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/satellite_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/satellite_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/seasurface_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/seasurface_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/sonobuoy_active_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/sonobuoy_active_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/sonobuoy_passive_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/sonobuoy_passive_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/sub_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/sub_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/SubGroup_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/SubGroup_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/SurfaceGroup_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/SurfaceGroup_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/torp_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/torp_unknown.png')"/></li>
+        <li class="li2"><img src="./img/menuIcon/icons/unknown/underwaterdecoy_unknown.png" title="" width="25px" height="25px" onclick="addJunBoard('unknown/underwaterdecoy_unknown.png')"/></li>
+      </ul>
+    </div>
+
+    <!-- 钳形箭头 -->
+    <div id="logging"> </div>
+    <!-- 测量 -->
+   <div id="toolbar1" style="display: block;">
+      <div class="btn btn-info" name="measure">
+        <button type="button" id="moni" onclick="SetMode('drawPloy')">面积</button>
+        <button type="button" onclick="SetMode('drawLine')">测量</button>
+        <button type="button" onclick="clearDrawingBoard()">清除</button>      
+      </div>
+    </div> 
+    <div id="scenario" style="display:none;">
+      <input type="text" class="mask-btu" id='subtext'>
+      <input type="button" name="" value="确定" class="mask-btu" id='sub' onclick="subScenbtu()">
+      <input type="button" name="" value="取消" class="mask-btu" id='cancel' onclick="canclebtu()">
+    </div>
+  </div> 
+
+</body>
+
+<script>if (typeof module === 'object') { window.module = module; module = undefined; }
+</script>
+<script src="./lib/jquery.min.js"></script>
+<script src="./lib/Cesium-1.51/Build/Cesium/Cesium.js"></script>
+<script src="lib/Cesium-1.51/Apps/Sandcastle/Sandcastle-header.js"></script><!-- 沙盒 -->
+<script type="text/javascript" src="lib/BootStrap/bootstrap.js"></script>
+<script type="text/javascript" src="lib/BootStrap/bootstrap-table.js"></script>
+<script type="text/javascript" src="lib/BootStrap/bootstrap-table-zh-CN.js"></script>
+<script src="lib/pc.js"></script>
+
+
+</html>

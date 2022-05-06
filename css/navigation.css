@@ -1,0 +1,13 @@
+.compass {
+    position: absolute;
+    left: 0;
+    top: 10px;
+  }
+
+  .navigation-controls {
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    height: 90px;
+  }
+

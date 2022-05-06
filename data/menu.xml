@@ -1,0 +1,47 @@
+﻿<Menus>
+  <menu id="1">
+    <menuid>1</menuid>
+    <menuname>测试1</menuname>
+    <menuurl></menuurl>
+  </menu>
+  <menu id="2">
+    <menuid>2</menuid>
+    <menuname>测试2</menuname>
+    <menuurl></menuurl>
+  </menu>
+  <menu id="3">
+    <menuid>3</menuid>
+    <menuname>测试3</menuname>
+    <menuurl></menuurl>
+  </menu>
+  <menu id="4">
+    <menuid>4</menuid>
+    <menuname>测试4</menuname>
+    <menuurl></menuurl>
+  </menu>
+  <menu id="5">
+    <menuid>5</menuid>
+    <menuname>测试5</menuname>
+    <menuurl></menuurl>
+  </menu>
+  <menu id="6">
+    <menuid>6</menuid>
+    <menuname>地点</menuname>
+    <menuurl></menuurl>
+  </menu>
+  <menu id="7">
+    <menuid>7</menuid>
+    <menuname>环境</menuname>
+    <menuChild>
+        <Childid>35</Childid>
+        <Childname>卫星临空预报</Childname>
+        <Childurl>addSatellite()</Childurl> 
+    </menuChild> 
+    <menuurl></menuurl>
+  </menu>
+  <menu id="9">
+    <menuid>9</menuid>
+    <menuname>计划</menuname>
+    <menuurl></menuurl>
+  </menu>  
+</Menus>

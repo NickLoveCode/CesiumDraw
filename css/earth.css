@@ -1,0 +1,414 @@
+.fullSize {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+/* #menu{
+    display: block;
+    position: absolute;
+    top: 0;
+    right:0;
+    border: none;
+    width: 30%;
+    height: 100%; 
+    z-index: 999;
+} */
+.compass {
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+.navigation-controls {
+  position: absolute;
+  left: 30px;
+  top: 10px;
+  height: 90px;
+}
+#eye{
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    bottom:0;
+    right: 0;
+    z-index: 999;
+    background:black;
+    border: solid blue 1px;
+}  
+
+#heat {
+  background:#303336;
+  padding: 4px;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  left: 500px;
+  position: absolute;
+  float: left;
+}
+#heat input {
+  vertical-align: middle;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+#Visiblebar {
+  background:#303336;
+  padding: 4px;
+  border-radius: 4px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  position: relative;
+  float: right;
+}
+#WXAreabar {
+  background:#303336;
+  padding: 4px;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px; 
+  left: 300px;
+  position: absolute;
+  float: left;
+}
+/*面积、定位功能按钮 */
+.btn-info{
+  margin: 10px 10px 0 10px;
+  padding: 5px;
+  background-color: #656B6A;
+  /* position: relative; */
+  position: absolute;
+  right: -12px;
+  top: 54px;
+}
+.btn-info > button{
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid rgb(37, 34, 34);
+  cursor: pointer;
+  /* background-color:rgb(212, 13, 13); */
+  opacity:0.8;
+}
+.btn-info  > button:hover {
+  background: #eee;
+}
+#_coordinates{
+  position: absolute;
+bottom: 95px;
+right: 0px;
+}
+/* 标会功能组  display: none;*/
+#toolbar{
+  width: 60px;
+  margin-top: 78px;
+  margin-right: -94px;
+  padding-left: 10px;
+  padding-top: 10px;
+  background:#4F5149;   
+  height: 240px;
+  float: right;
+  position: absolute;
+  right: 93px;
+  top: 68px;
+}
+#twolist{
+  width: 60px;
+  margin-top: 78px;
+  margin-right: -94px;
+  padding-left: 10px;
+  padding-top: 10px;
+  background:#4F5149;   
+  height: 240px;
+  float: right;
+  position: absolute;
+  right: 93px;
+  top: 68px;
+}
+/* 标会功能按钮*/
+
+#Toollogo{
+  position: absolute;
+  z-index: 999;
+  right: 0px;
+  top: 114px;
+}
+#clicklogo{
+  margin-top: 44px;
+  margin-right: 10px;
+  background:#303336;
+  width: 94px;
+  height: 32px;
+  position: absolute;
+  right: -10px;
+  top: 70px;
+}
+#toollist{
+  margin-top: 78px;
+  margin-right: -94px;
+  background:#656B6A;
+  width: 93px;
+  height: 290px;
+  position: absolute;
+  z-index: 999;
+  right: 94px;
+  top: 68px;
+}
+
+#junlist{
+  margin-top: 78px;
+  margin-right: -94px;
+  padding-left: 10px;
+  padding-top: 10px;
+  background:#4F5149;
+  width: 65px;
+  height: 450px;
+  float: right;
+  position: absolute;
+  right: 93px;
+  top: 68px;
+}
+#junlist2{
+  margin-top: 78px;
+  margin-right: -94px;
+  padding-left: 10px;
+  padding-top: 10px;
+  background:#4F5149;
+  width: 65px;
+  height: 450px;
+  float: right;
+  position: absolute;
+  right: 93px;
+  top: 68px;
+}
+#junlist3{
+  margin-top: 78px;
+  margin-right: -94px;
+  padding-left: 10px;
+  padding-top: 10px;
+  background:#4F5149;
+  width: 65px;
+  height: 450px;
+  float: right;
+  position: absolute;
+  right: 93px;
+  top: 68px;
+}
+#junlist4{
+  margin-top: 78px;
+  margin-right: -94px;
+  padding-left: 10px;
+  padding-top: 10px;
+  background:#4F5149;
+  width: 65px;
+  height: 450px;
+  float: right;
+  position: absolute;
+  right: 93px;
+  top: 68px;
+}
+#junlist5{
+  margin-top: 78px;
+  margin-right: -94px;
+  padding-left: 10px;
+  padding-top: 10px;
+  background:#4F5149;
+  width: 65px;
+  height: 450px;
+  float: right;
+  position: absolute;
+  right: 93px;
+  top: 68px;
+}
+
+.licss {
+  display: block;
+  width:100%;
+  height:35px;
+  line-height: 40px;
+  padding-left: 10px;
+}
+.li2 {
+  width:25px;
+  height:25px;
+  border: 1px solid #FFFFFF;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  float: left;
+}
+.chatimg{
+  padding: 0px;
+}
+#mycharDiv{
+  background: rgba(37, 34, 34);
+  padding: 4px;
+  margin-top: 150px;
+  margin-right: -70px;
+  color:#FFFFFF;
+  width:500px;
+  height:500px;
+  float: right;
+  position: relative;
+}
+#tablebar {
+  background:#303336;
+  padding: 4px;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  left: 400px;
+  position: absolute;
+  float: left;
+}
+
+/* 标绘按钮的样式 */
+#plottoolbar {
+  background:#303336;
+  padding: 4px;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  left: 10px;
+  position: absolute;
+  float: left;
+}
+
+/*加载我方装备界面*/
+#weapon {
+  width: 1000px;
+  height: 450px;
+  background-color: #0A0D08;
+  margin-top:10%;
+  left:15%;
+  position: relative;
+  }
+  .mask-head {
+    width: 100%;
+    height: 35px;
+    background: #3399FF;
+    color: #fff;
+    font-size: 18px;
+    margin:0px;
+  }
+  .mask-title {
+    font-size: 18px;
+    margin-top: 5px;
+    margin-left:10px;
+    float:left;
+    position: relative;
+  }
+  .mask-exit {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #fff;
+    font-size: 17px;
+    text-align: center;
+    line-height: 28px;
+    float: right;
+    margin: 2px 2px 0 0;
+    position: relative;
+  }
+  .mask-content {
+  width: 100%;
+  height: 340px;
+  margin: 0 auto;
+  }
+  .weapon-content {
+    width: 100%;
+    height: 409px;
+    margin: 0 auto;
+  }
+  .table-content {
+  width: 100%;
+  height: 350px;
+  margin: 0 auto;
+  overflow-y: auto;
+  }
+  #fuzzy-judge-table {
+    width: 95%;
+    height: 38px;
+    background: #0A0D08;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-top:5px;
+    margin-left:20px;
+    margin-right:20px;
+    vertical-align:top;
+  }
+  .tbcl {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #FFFFFF;
+  }
+  .mask-bottom {
+    width: 100%;
+    height: 5px;
+    background: #4488BB;
+    margin-top: 0px;
+  }
+  .row{
+    display: block;
+    position: absolute;
+    border: none;
+    padding-top: 30px;
+    padding-left: 100px;
+   
+  }
+  #heximg{
+    display: block;
+    position: absolute;
+    
+  }
+  #cesiumContainer .cesium-viewer-toolbar{
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 35px;
+  }
+  .cesium-viewer-toolbar .cesium-baseLayerPicker-dropDown-visible{
+    left: 0px;
+  }
+  .cesium-viewer-toolbar .cesium-baseLayerPicker-dropDown{
+    left: 0px;
+  }
+  .header{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #617085;
+    margin-bottom: 5px;
+    display: flex;
+    padding: 5px;
+  }
+
+ #filetool{ 
+    margin-top: 2px;
+    margin-left: 18%;    
+    width: 93px;
+    height: 290px;
+    position: absolute;
+    float: left;
+    z-index: 999;
+  }
+
+  #scenario{    
+    background-color:#0A0D08;
+    top:26%;
+    left: 17%;
+    position: absolute;
+    float: center;
+    z-index: 999;
+  }
+
+
+  /* #cesiumContainer .cesium-viewer-animationContainer{
+    bottom: 66px;
+  } */
+  /* #cesiumContainer .cesium-viewer-timelineContainer{
+    bottom: 65px;
+  } */
+  /* #cesiumContainer .cesium-viewer-fullscreenContainer{
+    bottom: 64px;
+  } */
