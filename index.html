@@ -252,5 +252,34 @@
 <script type="text/javascript" src="lib/BootStrap/bootstrap-table-zh-CN.js"></script>
 <script src="lib/pc.js"></script>
 
-
+<!-- 类型所需的js -->
+<!-- 导航 -->
+<script src='./sysjs/CesiumTool/viewerCesiumNavigationMixin.min.js'></script>
+<!-- 主js-->
+<script src='./renderer.js'></script> 
+<!-- 保存文件 -->
+<script src='./lib/savefile.js'></script> 
+ <!-- 功能键功能展示 -->
+<script src='./sysjs/CustomEvent/btclick.js'></script>
+<!-- 卫星 -->
+<script src='./sysjs/DrawTool/SatelliteDraw/drawSatellite.js'></script> 
+<!--绘制城市地点-->
+<script src='./sysjs/DrawTool/BaseDraw/drawPlace.js'></script>
+<!-- 显示经纬度-->
+<!--绘制一般的形状-->
+<script src='./sysjs/DrawTool/BaseDraw/drawPlot.js' type="text/jscript"></script>
+<!-- 绘制 -->
+<script src='./sysjs/DrawTool/BaseDraw/drawArea.js'></script>
+<!-- 可移动 -->
+<script src='./sysjs/CustomEvent/html2Canvas.js'></script>
+<!-- 保存 -->
+<script src='./sysjs/CustomEvent/moveEntity.js'></script>
+<!-- 测量 -->
+<script type="text/javascript" src="sysjs/LoadData/readXml.js"></script>
+<script type="text/javascript">
+    $(function () {
+        getMenuList();
+        getJunList();
+    }); 
+</script>
 </html>
